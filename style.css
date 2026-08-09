@@ -872,4 +872,9 @@ html {
         font-family: 'Montserrat', sans-serif;
         margin-top: 10px;
     }
+
+    .aboutme-text-img img
+    {
+        display: none;
+    }
 }
