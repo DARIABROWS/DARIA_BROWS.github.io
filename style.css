@@ -341,7 +341,7 @@ h1 {
 
 
 .place {
-    background-image: url(image/placeful.png);
+    background-image: url(image/placeFul.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -624,7 +624,8 @@ footer * {
 .price-slide {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px; /* ← Отступ между карточками */
+    gap: 1px;
+    /* ← Отступ между карточками */
     width: 33.333%;
     padding: 10px 20px;
     box-sizing: border-box;
@@ -706,15 +707,15 @@ footer * {
 }
 
 /* Управление переключением */
-#price-slide1:checked ~ .price-slider-wrapper .price-slider-track {
+#price-slide1:checked~.price-slider-wrapper .price-slider-track {
     transform: translateX(0%);
 }
 
-#price-slide2:checked ~ .price-slider-wrapper .price-slider-track {
+#price-slide2:checked~.price-slider-wrapper .price-slider-track {
     transform: translateX(-33.333%);
 }
 
-#price-slide3:checked ~ .price-slider-wrapper .price-slider-track {
+#price-slide3:checked~.price-slider-wrapper .price-slider-track {
     transform: translateX(-66.666%);
 }
 
@@ -743,21 +744,21 @@ footer * {
 }
 
 /* Активная кнопка */
-#price-slide1:checked ~ .price-slider-nav label[for="price-slide1"] {
+#price-slide1:checked~.price-slider-nav label[for="price-slide1"] {
     background: #FFFFFF;
     border-color: #E5DBD1;
     border-width: 5px;
     transform: scale(1.3);
 }
 
-#price-slide2:checked ~ .price-slider-nav label[for="price-slide2"] {
+#price-slide2:checked~.price-slider-nav label[for="price-slide2"] {
     background: #FFFFFF;
     border-color: #E5DBD1;
     border-width: 5px;
     transform: scale(1.3);
 }
 
-#price-slide3:checked ~ .price-slider-nav label[for="price-slide3"] {
+#price-slide3:checked~.price-slider-nav label[for="price-slide3"] {
     background: #FFFFFF;
     border-color: #E5DBD1;
     border-width: 5px;
@@ -778,7 +779,7 @@ footer * {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .rectangle {
         width: 100%;
         max-width: 320px;
@@ -788,4 +789,87 @@ footer * {
 
 html {
     zoom: 0.9;
+}
+
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ (до 768px) ===== */
+@media (max-width: 768px) {
+
+    /* Глобальные настройки */
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+
+    header {
+        display: none;
+    }
+
+
+    .main__text h1 {
+        font-size: 60px !important;
+        margin-bottom: -60px;
+        margin-top: 20px;
+        
+    }
+
+    .main__text p {
+        font-size: 80px !important;
+        margin-bottom: 35px;
+    }
+
+    /* ===== ГЛАВНЫЙ ЭКРАН ===== */
+    .main {
+        height: auto;
+        min-height: 1200px;
+        margin-bottom: 50px;
+        background-image: url("image/foneMobile.png");
+        /* Нужно будет заменить на мобильный фон */
+        background-position: top center;
+
+    }
+
+    .main__container {
+        flex-direction: column;
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    
+
+
+
+    .main__button {
+        width: 350px;
+        padding: 14px 50px;
+        background-color: #877060;
+        border-color: #877060;
+        border-radius: 10px;
+        margin-top: 900px;
+    }
+
+    .main__button a {
+        font-size: 18px;
+        color: #DBCDBF;
+    }
+
+    .mobile-header {
+        display: flex !important;
+        background-color: transparent;
+        /* Добавьте это */
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .mobile-header h5 {
+        background-color: transparent !important;
+        font-size: 18px;
+        color: #877060;
+        letter-spacing: 22%;
+        font-weight: 50;
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 10px;
+    }
 }
