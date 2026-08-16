@@ -14,7 +14,14 @@
 
     <link rel="shortcut icon" href="image/fav.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Подключаем Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Подключаем Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -60,7 +67,7 @@
     </header>
 
     <main>
-        <section class="main">
+        <section class="main scroll-animate">
             <div class="main__container container">
                 <div class="main__image">
 
@@ -83,8 +90,8 @@
             </div>
         </section>
 
-        <section class="portfolio">
-            <div class="portfolio-lable">
+        <section class="portfolio scroll-animate">
+            <div class="portfolio-lable ">
                 <div style="border-bottom: 1.5px solid #C5BDB6; width: 395px;"></div>
                 <h1>Портфолио</h1>
                 <div style="border-bottom: 1.5px solid #C5BDB6; width: 395px;"></div>
@@ -130,10 +137,44 @@
 
         </section>
 
+        <!-- Мобильный слайдер (по 1 фото, свайп) -->
+        <div class="mobile-slider-wrapper scroll-animate">
+            <div class="mobile-slider-container" id="mobileSlider">
+                <div class="mobile-slide">
+                    <img src="image/girl1.png" alt="Работа 1">
+                </div>
+                <div class="mobile-slide">
+                    <img src="image/girl2.png" alt="Работа 2">
+                </div>
+                <div class="mobile-slide">
+                    <img src="image/girl3.png" alt="Работа 3">
+                </div>
+                <div class="mobile-slide">
+                    <img src="image/girl4.png" alt="Работа 4">
+                </div>
+                <div class="mobile-slide">
+                    <img src="image/girl5.png" alt="Работа 5">
+                </div>
+                <div class="mobile-slide">
+                    <img src="image/girl6.png" alt="Работа 6">
+                </div>
+                <div class="mobile-slide">
+                    <img src="image/girl7.png" alt="Работа 7">
+                </div>
+                <div class="mobile-slide">
+                    <img src="image/girl8.png" alt="Работа 8">
+                </div>
+                <div class="mobile-slide">
+                    <img src="image/girl9.png" alt="Работа 9">
+                </div>
+            </div>
+
+            <!-- Индикаторы (точки) -->
+            <div class="mobile-slider-dots" id="mobileDots"></div>
+        </div>
 
 
-
-        <section class="place">
+        <section class="place scroll-animate">
             <div class="place-text container">
                 <h1>ГДЕ НАХОДИСЯ</h1>
                 <h2>Где Наша Студия?</h2>
@@ -141,18 +182,21 @@
                     <li>г.Нижнекамск</li>
                     <li>ТРЦ Рамус Молл, Сююмбике 7</li>
                     <li>5 этаж, салон красоты «Бигуди»</li>
+
                 </ul>
+                <p class="place-address-mobile">г. Нижнекамск ТРЦ Рамус Молл, Сююмбике 7, 5 этаж, салон красоты «Бигуди»
+                </p>
                 <button class="place__button "><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
 
             </div>
         </section>
 
-        <section class="aboutme">
+        <section class="aboutme scroll-animate">
 
             <div class="aboutme-header">
-                <div style="border-bottom: 1.5px solid #C5BDB6; width: 62px;"></div>
+                <div class="line1"></div>
                 <h1>Обо мне</h1>
-                <div style="border-bottom: 1.5px solid #C5BDB6; width: 1000px;"></div>
+                <div class="line2"></div>
             </div>
 
             <div class="aboutme-text-img">
@@ -183,7 +227,7 @@
 
 
 
-        <section class="price">
+        <section class="price scroll-animate">
             <div class="price-text container">
                 <div class="price-header">
                     <h1>Услуги</h1>
@@ -370,12 +414,180 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+            <!-- Мобильный слайдер услуг (по 1 карточке, свайп) -->
+            <div class="mobile-price-wrapper scroll-animate">
+                <div class="mobile-price-container" id="mobilePriceSlider">
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i1.svg" alt="">
+                            </div>
+                            <p class="glav">Д/У</p>
+                            <p>Долговременная укладка</p>
+                            <h1 class="price-cost">1000 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 2 мес.</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i2.svg" alt="">
+                            </div>
+                            <p class="glav">Коррекция</p>
+                            <p>Индивидуальная форма</p>
+                            <h1 class="price-cost">350 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 2 недель</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i3.svg" alt="">
+                            </div>
+                            <p class="glav">Окрашивание</p>
+                            <p>Стойкий цвет</p>
+                            <h1 class="price-cost">800 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 4 недель</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i1.svg" alt="">
+                            </div>
+                            <p class="glav">Д/У 1.0</p>
+                            <p>Д/У + коррекция + уход</p>
+                            <h1 class="price-cost">1300 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 2 мес.</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i1.svg" alt="">
+                            </div>
+                            <p class="glav">Д/У 2.0</p>
+                            <p>Д/У+коррекция+покрас+уход</p>
+                            <h1 class="price-cost">1600 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 2 мес.</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i5.svg" alt="">
+                            </div>
+                            <p class="glav">Комплекс</p>
+                            <p>Окрашивание + коррекция</p>
+                            <h1 class="price-cost">1000 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 2 мес.</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i2.svg" alt="">
+                            </div>
+                            <p class="glav">Архитектура</p>
+                            <p>Подбор формы</p>
+                            <h1 class="price-cost">300 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 2 недель</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i2.svg" alt="">
+                            </div>
+                            <p class="glav">Удаление усиков</p>
+                            <p>С заботой о коже</p>
+                            <h1 class="price-cost">200 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 1 мес.</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                    <div class="mobile-price-slide">
+                        <div class="rectangle">
+                            <div class="square">
+                                <img src="image/i4.svg" alt="">
+                            </div>
+                            <p class="glav">Уход</p>
+                            <p>Нанесение состава</p>
+                            <h1 class="price-cost">300 ₽</h1>
+                            <div class="price-time">
+                                <div class="circle">
+                                    <img src="image/ok.svg" alt="">
+                                </div>
+                                <p>Держится до 2 недель</p>
+                            </div>
+                            <button class="main__button"><a href="https://dikidi.ru/2123953">ЗАПИСАТЬСЯ</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Индикаторы (точки) -->
+                <div class="mobile-price-dots" id="mobilePriceDots"></div>
+            </div>
         </section>
+
+
 
     </main>
 
     <footer>
-        <div class="footer-in container">
+        <div class="footer-in container scroll-animate">
             <div class="block1">
                 <div class="footer-logo">
                     <img src="image/LOGO.svg" alt="">
@@ -391,13 +603,14 @@
                             <img src="image/iconphone.svg" alt="01">
                             <h1>+7 904 714 5924</h1>
                         </div>
-                        <p>Звоните или пишите, если остались вопросы. (12:00-22:00)</p>
+                        <p>Звоните или пишите, если
+                            остались вопросы. (12:00-22:00)</p>
                     </div>
 
 
 
 
-                    <div class="footer-phone ">
+                    <div class="footer-phone mobile-none">
                         <h1 class="society">Соцсети:</h1>
                         <p>Пишите по вопросам и консультации.</p>
                     </div>
@@ -414,6 +627,10 @@
                         </div>
                         <p>ТРЦ Рамус Молл, Сююмбике 7
                             5 этаж, салон красоты «Бигуди»</p>
+                    </div>
+
+                    <div class="footer-phone mobile-price-wrapper">
+                        <h1 class="society">Соцсети:</h1>
                     </div>
 
 
@@ -438,6 +655,7 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 
 </body>
 
