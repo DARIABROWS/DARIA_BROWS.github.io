@@ -147,6 +147,10 @@
     background-color: transparent;
 }
 
+.main__text .mobile-header {
+    margin-top: 0px;
+}
+
 .main__button {
     background-color: transparent;
     padding: 17px 77px;
@@ -189,6 +193,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 h1 {
@@ -206,6 +211,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 90px;
+
 }
 
 .portfolio-slider input[type="radio"] {
@@ -625,12 +631,13 @@ footer * {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
-    /* ← Отступ между карточками */
     width: 33.333%;
     padding: 10px 20px;
     box-sizing: border-box;
     flex-shrink: 0;
     justify-items: center;
+
+    padding: 10px 20px 30px 20px;
 }
 
 .rectangle {
@@ -648,6 +655,12 @@ footer * {
     gap: 20px;
     box-sizing: border-box;
     margin: 0 auto;
+}
+
+
+.rectangle:hover {
+    transform: scale(1.05);
+    box-shadow: -10px 10px 8px rgba(77, 77, 77, 0.1);
 }
 
 .rectangle .main__button {
@@ -719,7 +732,6 @@ footer * {
     transform: translateX(-66.666%);
 }
 
-/* Навигационные кнопки */
 .price-slider-nav {
     display: flex;
     justify-content: center;
@@ -743,7 +755,6 @@ footer * {
     transform: scale(1.2);
 }
 
-/* Активная кнопка */
 #price-slide1:checked~.price-slider-nav label[for="price-slide1"] {
     background: #FFFFFF;
     border-color: #E5DBD1;
@@ -809,24 +820,22 @@ html {
 
 
     .main__text h1 {
-        font-size: 60px !important;
-        margin-bottom: -60px;
+        font-size: 40px !important;
+        margin-bottom: -50px;
         margin-top: 20px;
-        
+
     }
 
     .main__text p {
-        font-size: 80px !important;
+        font-size: 55px !important;
         margin-bottom: 35px;
     }
 
     /* ===== ГЛАВНЫЙ ЭКРАН ===== */
     .main {
-        height: auto;
-        min-height: 1200px;
-        margin-bottom: 50px;
-        background-image: url("image/foneMobile.png");
-        /* Нужно будет заменить на мобильный фон */
+        height: 650px;
+        min-height: 650px;
+        background-image: url("image/fonemobile.png");
         background-position: top center;
 
     }
@@ -837,44 +846,633 @@ html {
         text-align: center;
     }
 
-    
-
-
 
     .main__button {
-        width: 350px;
-        padding: 14px 50px;
+        width: 250px;
+        padding: 10px 40px;
         background-color: #877060;
         border-color: #877060;
         border-radius: 10px;
-        margin-top: 900px;
+        margin-top: 370px;
+
     }
 
     .main__button a {
-        font-size: 18px;
+        font-size: 14px;
         color: #DBCDBF;
+
     }
 
     .mobile-header {
         display: flex !important;
         background-color: transparent;
-        /* Добавьте это */
         justify-content: center;
         padding: 10px 0;
+        margin-top: 30px;
     }
 
     .mobile-header h5 {
         background-color: transparent !important;
-        font-size: 18px;
+        font-size: 10px;
         color: #877060;
         letter-spacing: 22%;
         font-weight: 50;
         font-family: 'Montserrat', sans-serif;
+        margin-top: 0px;
+    }
+
+    .aboutme-text-img img {
+        display: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 75%;
+        /* 1rem = 12px */
+    }
+}
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 90%;
+        /* 1rem = 14.4px */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .price-header {
+        margin-bottom: 10px;
+    }
+
+    .portfolio {
+        margin-top: -85px;
+    }
+
+    .portfolio-lable div {
+        width: 25% !important;
+        min-width: 10%;
+    }
+
+    .portfolio-lable h1 {
+        font-size: 24px !important;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .portfolio-lable {
+        margin-top: 150px;
+    }
+
+    .aboutme-header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+
+
+    .aboutme-header h1 {
+        font-size: 40px !important;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    /* Убираем фиксированные ширины у всех контейнеров */
+    .container {
+        padding: 0 15px;
+        overflow: hidden;
+    }
+
+    /* Исправляем слайдер портфолио */
+    .portfolio-slider {
+        overflow: hidden;
+        padding: 0 10px;
+    }
+
+    .slide {
+        gap: 10px;
+    }
+
+    .slide img {
+        width: 30% !important;
+        height: auto;
+        max-height: 300px;
+    }
+
+    /* Исправляем слайдер цен */
+    .price-slider {
+        overflow: hidden;
+        padding: 0 10px;
+    }
+
+    .price-slide {
+        padding: 10px;
+        gap: 15px;
+    }
+
+
+    .portfolio-slider {
+        padding-bottom: 10px;
+    }
+
+
+    .place {
+        height: 620px;
+        min-height: 620px;
+        background-image: url("image/placemobile.png");
+        background-position: top center;
+        border-radius: 40px 40px 0 0;
+        margin-top: 80px;
+        padding: 60px 0;
+    }
+
+    .place-text h2 {
+        font-size: 40px !important;
+        margin-top: -30px;
+        margin-bottom: 20px;
+
+    }
+
+    .place-text h1 {
+        font-size: 30px !important;
+    }
+
+    .place-text p {
+        font-size: 12px !important;
+    }
+
+    .place-text li {
+        display: none;
+    }
+
+    .place-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .place__button {
+        margin-top: 40px;
+        width: 150px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-width: 1px;
+    }
+
+
+    .place__button a {
+
+        font-size: 10px;
+
+    }
+
+    .aboutme-header {
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .aboutme {
+        margin-bottom: 80px;
+
+
+    }
+
+
+    .aboutme-header h1 {
+        font-size: 24px !important;
+
+
+    }
+
+    .aboutme-block h1 {
+        font-size: 24px !important;
+        margin-bottom: 30px;
+    }
+
+    .aboutme-block1 h1 {
+        margin-right: -10px;
+    }
+
+    .aboutme-text p {
+        font-size: 12px !important;
+        margin-bottom: 30px;
+
+    }
+
+    .aboutme-text {
+        padding: 0 50px;
+    }
+
+
+    .price {
+        height: 520px;
+        min-height: 520px;
+        background-image: url("image/pricemobile.png");
+        background-position: top center;
+        border-radius: 40px 40px 0 0;
+        padding: 40px 0;
+    }
+
+    .price-text h2 {
+        font-size: 40px !important;
+        margin-top: -30px;
+        margin-bottom: 20px;
+
+    }
+
+    .price-text h1 {
+        font-size: 28px !important;
+
+
+    }
+}
+
+.place-address-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .place-address-mobile {
+        display: block !important;
+        margin-top: 10px;
+
+        color: #E0D8D3;
+        font-size: 16px;
+        text-align: center;
+        padding: 10px 50px;
+        line-height: 1.6;
+    }
+}
+
+.line1 {
+    border-bottom: 1.5px solid #C5BDB6;
+    width: 62px;
+}
+
+.line2 {
+    border-bottom: 1.5px solid #C5BDB6;
+    width: 1000px;
+}
+
+@media (max-width: 768px) {
+    .line1 {
+        width: 5% !important;
+        min-width: 5% !important;
+        margin-right: -40px !important;
+    }
+
+    .line2 {
+        width: 55% !important;
+        min-width: 55% !important;
+        margin-left: -40px !important;
+    }
+}
+
+/* ===== МОБИЛЬНЫЙ СЛАЙДЕР (скрыт на десктопе) ===== */
+.mobile-slider-wrapper {
+    display: none;
+    /* скрыт на десктопе */
+}
+
+@media (max-width: 768px) {
+    .portfolio-slider {
+        display: none;
+    }
+
+    .mobile-slider-wrapper {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 60px 0 0px 0;
+        touch-action: pan-y;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .mobile-slider-container {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+        cursor: grab;
+    }
+
+    .mobile-slider-container:active {
+        cursor: grabbing;
+    }
+
+    .mobile-slide {
+        flex: 0 0 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-slide img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+        border-radius: 40px 40px 0px 0px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-slide img:hover {
+        transform: scale(1.02);
+    }
+
+    .mobile-slider-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    .mobile-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #C5BDB6;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        padding: 0;
+    }
+
+    .mobile-dot.active {
+        background: #92867E;
+        transform: scale(1.3);
+        border: 4px solid #BEB5AE;
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* ===== МОБИЛЬНЫЙ СЛАЙДЕР УСЛУГ (скрыт на десктопе) ===== */
+.mobile-price-wrapper {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .price-slider {
+        display: none;
+    }
+
+    .mobile-price-wrapper {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px 0 40px 0;
+        touch-action: pan-y;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .mobile-price-container {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+        cursor: grab;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .mobile-price-container:active {
+        cursor: grabbing;
+    }
+
+    .mobile-price-slide {
+        flex: 0 0 calc(65% - 40px);
+        /* ← 65% ширины экрана, чтобы было видно 1.5 карточки */
+        padding: 0 5px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-price-slide .rectangle {
+        width: 100%;
+        max-width: 220px;
+        min-height: 300px;
+        background: #F7F4ED;
+        border-radius: 30px 30px 0 0;
+        box-shadow: -10px 10px 8px rgba(77, 77, 77, 0.1);
+        padding: 20px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        box-sizing: border-box;
+        margin: 0 auto;
+
+    }
+
+    .mobile-price-slide .rectangle .glav {
+        font-size: 12px;
         margin-top: 10px;
     }
 
-    .aboutme-text-img img
+    .mobile-price-slide .rectangle p {
+        font-size: 11px;
+    }
+
+    .mobile-price-slide .rectangle .price-cost {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .mobile-price-slide .rectangle .square {
+        width: 40px;
+        height: 40px;
+        border-radius: 15px;
+    }
+
+    .mobile-price-slide .rectangle .square img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .mobile-price-slide .rectangle .price-time p {
+        padding: 2px 0 0 0;
+        font-size: 11px;
+    }
+
+    .mobile-price-slide .rectangle .main__button {
+        width: 100%;
+        min-width: unset;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8px;
+        padding: 0px 15px;
+        background-color: transparent;
+        border: 1px solid #655A53;
+        border-radius: 40px;
+
+    }
+
+    .mobile-price-slide .rectangle .main__button a {
+        font-size: 10px;
+        color: #655A53;
+        white-space: nowrap;
+    }
+
+    .mobile-price-slide .rectangle .main__button:hover {
+        background-color: #494239;
+    }
+
+    .mobile-price-slide .rectangle .main__button:hover a {
+        color: #F7F4ED;
+    }
+
+    .mobile-price-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 35px;
+        padding-bottom: 10px;
+    }
+
+    .mobile-price-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #F7F4ED;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        padding: 0;
+    }
+
+    .mobile-price-dot.active {
+        background: #F7F4ED;
+        transform: scale(1.3);
+        border: 4px solid #EBE2D9;
+        width: 12px;
+        height: 12px;
+    }
+
+    .price-cost {
+        color: #494239;
+    }
+
+    footer {
+        background-image: none;
+
+    }
+
+    .footer-in {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .footer-logo h2 {
+        font-size: 17px;
+    }
+
+
+    .footer-logo h5 {
+        margin-top: 10px;
+        font-size: 11px;
+    }
+
+    .block2
+    {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 120px;
+    }
+
+    .mobile-none
     {
         display: none;
+    }
+
+    
+    .footer-phone h1 {
+        font-size: 15px;
+    }
+    .footer-phone p {
+        font-size: 11px;
+    }
+
+    .footer-firstblock
+    {
+        gap: 0px;
+    }
+    .society
+    {
+        margin-top: 60px;
+        display: flex;
+        justify-self: center;
+        margin:  60px 0 30px 0;
+    }
+    .footer__messengers 
+    {
+        margin: 10px 0px 0 0;
+        gap: 46px;
+    }
+    .footer__messengers a
+    {
+        width: 15px;
+        height: 15px;
+    }
+    .footer__messengers a img
+    {
+        width: 15px;
+        height: 15px;
+    }
+    .footer-phone 
+    {
+        padding-bottom: 0px;
+        
+    }
+    .block2 img
+    {
+        width: 18px;
+        height: 18px;
     }
 }
